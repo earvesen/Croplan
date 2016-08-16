@@ -1,5 +1,5 @@
 <section>
-    <div id="451_msg_read" ng-hide="composing" class="panel panel-default">
+    <div id="451_msg_read" ng-hide="composing" class="panel panel-no-panels">
         <div class="panel-heading">
             <h3 class="panel-title">{{message.Subject}}</h3>
         </div>
@@ -16,7 +16,7 @@
             <button id="451_btn_ok" ng-click="ok()" type="button" class="btn btn-success">{{'OK' | r | xlat}}</button>
         </div>
     </div>
-    <div id="451_msg_reply" ng-show="composing" class="panel panel-default">
+    <div id="451_msg_reply" ng-show="composing" class="panel panel-no-panels">
         <div class="panel-heading">
             <h3 class="panel-title">{{'Reply' | r | xlat}}</h3>
         </div>

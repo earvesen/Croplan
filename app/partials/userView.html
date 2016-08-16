@@ -1,7 +1,7 @@
 <section class="user-view">
     <div class="hidden-md hidden-lg" ng-class="{'panel panel-default':!user.Permissions.contains('ViewSelfAdmin')}">
         <div class="panel-heading" ng-show="!user.Permissions.contains('ViewSelfAdmin')">
-            <h3 class="panel-title">{{'My Account' | r | xlat}}</h3>
+            <h3 class="panel-title">{{'Profile' | r | xlat}}</h3>
         </div>
         <div ng-class="{'panel-body':!user.Permissions.contains('ViewSelfAdmin')}">
             <accountnavigation />
@@ -10,7 +10,7 @@
     <loadingindicator title="{{'Please wait while we save your changes' | r | xlat}}" ng-show="displayLoadingIndicator"/>
     <identifyusermessage ng-show="user.Type == 'TempCustomer'" />
     <form ng-show="user.Permissions.contains('ViewSelfAdmin')" name="login_existing" ng-submit="loginExisting()" ng-if="user.Type == 'TempCustomer'">
-        <div class="panel panel-default" id="user_form">
+        <div class="panel panel-no-panels" id="user_form">
             <div class="panel-heading">
                 <h3 class="panel-title">{{('Logon' | r) + ' ' + ('as existing user' | r) | xlat}}</h3>
             </div>
@@ -47,7 +47,7 @@
         </form>
 
         <form name="resetbytoken" ng-submit="resetWithToken()" >
-            <div class="panel panel-default" ng-show="enterResetToken">
+            <div class="panel panel-no-panels" ng-show="enterResetToken">
                 <loadingindicator ng-show="emailResetLoadingIndicator" title="{{'Please wait while we reset your password' | r | xlat}}" />
                 <div class="panel-heading">
                     <h3 class="panel-title">{{'Lost login information' | r | xlat}}</h3>
@@ -81,24 +81,24 @@
     </div>
 
     <form ng-show="user.Permissions.contains('ViewSelfAdmin')" name="user_form" ng-submit="save()">
-        <div class="panel panel-default" id="user_form">
+        <div class="panel panel-no-panels" id="user_form">
             <div class="panel-heading">
                 <h3 class="panel-title">{{(user.Type == 'TempCustomer' ? 'Create' : 'My') + ' ' + ('Account' | r) | xlat}}</h3>
             </div>
             <div class="panel-body">
                 <div class="col-sm-6 view-form-icon">
                     <div>
-                        <label ng-show="user.FirstName">{{('First' | r) + ' ' + ('Name' | r) | xlat}}</label>
+                        <label>{{('First' | r) + ' ' + ('Name' | r) | xlat}}</label>
                         <input name="firstname" class="form-control" type="text" required ng-model="user.FirstName" placeholder="{{('First' | r) + ' ' + ('Name' | r) | xlat}}" autocomplete="off" />
                         <i class="fa fa-user"></i>
                     </div>
                     <div>
-                        <label ng-show="user.LastName">{{('Last' | r) + ' ' + ('Name' | r) | xlat}}</label>
+                        <label>{{('Last' | r) + ' ' + ('Name' | r) | xlat}}</label>
                         <input name="lastname" required class="form-control" type="text" ng-model="user.LastName" placeholder="{{('Last' | r) + ' ' + ('Name' | r) | xlat}}" autocomplete="off" />
                         <i class="fa fa-user"></i>
                     </div>
                     <div>
-                        <label ng-show="user.Phone">{{'Phone' | r | xlat}}</label>
+                        <label>{{'Phone' | r | xlat}}</label>
                         <input name="phone" class="form-control" type="text" ng-model="user.Phone" ui-mask="(999) 999-9999" autocomplete="off" />
                         <i class="fa fa-phone"></i>
                     </div>
@@ -117,12 +117,13 @@
                     </div>
                     <!--TODO username input shouldn't default to temporary usernames, if the user is temp, make the placeholder show instead !-->
                     <div>
-                        <label ng-show="user.Password">{{'Password' | r | xlat}}</label>
-                        <input name="password" class="form-control" ng-required="user.Type == 'TempCustomer'" type="password" ng-model="user.Password" placeholder="{{'Password' | r | xlat}}" autocomplete="off" />
+                        <label>{{'Password' | r | xlat}}</label>
+                        <input name="password" class="form-control" ng-required="user.Type == 'TempCustomer'" type="password" ng-model="user.Password" placeholder="{{'Password' | r | xlat}}"
+                               autocomplete="off" />
                         <i class="fa fa-lock"></i>
                     </div>
                     <div>
-                        <label ng-show="user.ConfirmPassword">{{('Confirm' | r) + ' ' + ('Password' | r) | xlat}}</label>
+                        <label>{{('Confirm' | r) + ' ' + ('Password' | r) | xlat}}</label>
                         <input name="confirm_password" ng-match="user.Password" ng-required="user.Type == 'TempCustomer' || user.Password" class="form-control" type="password" ng-model="user.ConfirmPassword" placeholder="{{('Confirm' | r) + ' ' + ('Password' | r) | xlat}}" autocomplete="off" />
                         <i class="fa fa-lock"></i>
                         <inlineerror ng-show="user_form.confirm_password.$error.match" title="{{('Password' | r) + 's do not match!' | xlat}}" />
@@ -150,7 +151,7 @@
                     </span>
                 </div>
             </div>
-            <div class="panel-body" >
+            <div class="panel-body">
                 <div  ng-if="user.CustomFields" class="col-sm-6 view-form-icon">
                     <div ng-repeat="field in user.CustomFields">
                         <customfilefield customfield="field" ng-if="field.ControlType == 'File' && field.DisplayToUser"></customfilefield>

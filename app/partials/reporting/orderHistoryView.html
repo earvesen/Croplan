@@ -12,7 +12,7 @@
         </nav>
         <div class="col-md-3 col-md-offset-1 col-md-push-8">
             <div class="row">
-                <div class="panel panel-primary">
+                <div class="panel panel-no-panels">
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             {{('Order' | r) + ' ' + ('Details' | r) | xlat}}
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-pull-4">
-            <div class="panel panel-default">
+            <div class="panel panel-no-panels">
                 <div class="panel-heading">
                     <h3 class="panel-title panel-primary">
                         {{order.LineItems.length}} {{'Item' + (order.LineItems.length > 1 ? 's' : '') | rl | xlat}} {{'in this' | rl | xlat:(currentOrder.LineItems.length)}} {{'Order' | rl | xlat}}
@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <div ng-show="order.Approvals" class="panel panel-default approval-rule-status-summary">
+            <div ng-show="order.Approvals" class="panel panel-no-panels approval-rule-status-summary">
                 <div class="panel-heading">
                     <h3 class="panel-title panel-primary">{{'Approvals' | r | xlat}}</h3>
                 </div>

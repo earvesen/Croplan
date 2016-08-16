@@ -1,17 +1,40 @@
-<section>
+<section ng-if="!cartCount">
+    <div class="row">
+        <aside class="col-md-3 visible-md visible-lg">
+            <div class="panel panel-no-panels panel-nav">
+                <nav class="nav 451qa_sidenav panel-body">
+                    <ul>
+                        <categorytree tree='tree' current='currentCategory' />
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="col-xs-12 col-md-9">
+            <div class="panel panel-no-panels">
+                <div class="panel-heading">
+                    <h3 class="panel-title panel-primary">{{('Cart' | r) | xlat }}</h3>
+                </div>
+                <div class="panel-body">
+                    <p class="alert alert-warning">There are 0 items in your cart.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section ng-if="cartCount">
     <div ng-show="currentOrder" class="hidden-print">
-        <nav class="nav">
+       <!-- <nav class="nav">
             <ul>
                 <li><span class="text-primary">{{'Cart' | r | xlat}}</span></li>
                 <li class="pull-right" ng-click="onPrint()"><span><i class="fa fa-print text-primary" rel="tooltip" title="{{'Print' | r | xlat}}" ></i></span></li>
             </ul>
-        </nav>
+        </nav>-->
         <form ng-submit="saveChanges()" name="cart" novalidate="">
             <loadingindicator  ng-show="displayLoadingIndicator" title="{{'Please wait while we save your order' | r | xlat}}"/>
             <div>
                 <cartmessage />
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-no-panels">
                 <div class="panel-heading">
                     <h3 class="panel-title">
                         {{currentOrder.LineItems.length}} {{'item' + (currentOrder.LineItems.length > 1 ? 's' : '') | rl | xlat}} {{'in your' | rl | xlat:(currentOrder.LineItems.length)}} {{'cart' | rl | xlat}}
