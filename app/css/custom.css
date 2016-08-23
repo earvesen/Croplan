@@ -397,3 +397,11 @@ hr.login-header-top {
     border-color: #6f9934;
     color: #ffffff;
 }
+
+.badge {
+    background-color:#FFF;
+}
+
+.order-history-view .nav li {
+    padding-left:20px;
+}
