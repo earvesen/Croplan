@@ -206,7 +206,6 @@ hr.login-header-top {
     float:left;
     margin:15px 95px 0 15px;
 }
-
 .logo img {
     width:168px;
     height:auto; /*337x174*/
@@ -216,6 +215,7 @@ hr.login-header-top {
     .logo {
         float:none;
         text-align:center;
+        width:100%;
     }
 
     .logo img {
@@ -442,16 +442,39 @@ hr.login-header-top {
     padding-left:20px;
 }
 
-.order-summary {
+/*.order-summary {
+    min-height:360px;
+}
+
+.order-summary.ship-address-selected {
     min-height:470px;
 }
 
+.order-summary.ship-address-input-open {
+    min-height:930px;
+}
+
+@media (max-width:767px) {
+    .order-summary,
+    .order-summary.ship-address-selected,
+    .order-summary.ship-address-input-open {
+        min-height:100%;
+    }
+}*/
+
 .checkout-buttons {margin: 0 0 30px 15px;}
 .checkout-buttons li { width:33%; float:left; padding-right:10px; }
+
+@media (max-width:767px) {
+    .checkout-buttons li {
+        width: 100%;
+        padding: 5px 15px 5px 0;
+    }
+}
+
 .checkout-buttons li .btn-primary {text-transform: none}
 .checkout-buttons li .btn {width:100%;}
 
-@media (max-width:767px) { .checkout-buttons li {width:100%;} }
 
 .checkout-reminder {
     padding:0 5px;
@@ -503,6 +526,45 @@ hr.login-header-top {
     border-top: 0 none;
 }
 
+/*
 .panel p {
     margin:0 10px;
+}*/
+
+.btn-danger {
+    color: #ffffff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active,
+.open .dropdown-toggle.btn-danger {
+    color: #ffffff;
+    background-color: #e82c2e;
+    border-color: #e82c2e;
+}
+.btn-danger:active,
+.btn-danger.active,
+.open .dropdown-toggle.btn-danger {
+    background-image: none;
+}
+.btn-danger.disabled,
+.btn-danger[disabled],
+fieldset[disabled] .btn-danger,
+.btn-danger.disabled:hover,
+.btn-danger[disabled]:hover,
+fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus,
+.btn-danger[disabled]:focus,
+fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled:active,
+.btn-danger[disabled]:active,
+fieldset[disabled] .btn-danger:active,
+.btn-danger.disabled.active,
+.btn-danger[disabled].active,
+fieldset[disabled] .btn-danger.active {
+    background-color: #e82c2e;
+    border-color: #e82c2e;
 }
