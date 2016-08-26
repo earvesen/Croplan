@@ -15,9 +15,14 @@ function securitymodal() {
 
     function template() {
         return [
+            '<style>',
+            '.security-modal .btn-default { bottom: 20px; float: right; margin-right: 20px; position: relative;}',
+            '</style>',
+            '<div class="security-modal">',
             '<a class="btn btn-default" ng-click="openSecurity(500)">',
             '<span class="fa fa-info-circle"></span> {{\'Concerned About Security?\' | r | xlat}}',
-            '</a>'
+            '</a>',
+            '</div>'
         ].join('');
     }
 }

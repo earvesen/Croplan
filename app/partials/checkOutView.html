@@ -2,6 +2,7 @@
     <!--<loadingindicator ng-show="displayLoadingIndicator" title="{{'Please wait while we update your order' | r | xlat}}" />-->
     <div class="col-md-4 col-md-offset-1 col-md-push-7 col-collapse">
         <ordersummary />
+        <securitymodal></securitymodal>
     </div>
 
     <div class="col-md-7 col-md-pull-5 col-collapse" ng-show="currentOrder && currentOrder.isEditable" ng-click="showSuccessAlert = false">
@@ -9,6 +10,30 @@
         <ordershipping />
         <orderbilling ng-show="currentOrder.BillingEnabled" />
         <orderapprovals ng-show="currentOrder.Approvals" />
+
+        <ul class="checkout-buttons">
+            <li ng-if="continue">
+                <button type="button" class="btn btn-info" redirect="catalog">
+                    <small class="hidden-xs">{{'Continue Shopping' | r | xlat}}</small>
+                    <small class="visible-xs">{{'Shop' | r | xlat}}</small>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-danger" ng-click="currentOrder.Status == 'AwaitingApproval' ? cancelEdit() : cancelOrder()">
+                    <small class="hidden-xs" ng-show="currentOrder.Status != 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Order' | r) | xlat}}</small>
+                    <small class="hidden-xs" ng-show="currentOrder.Status == 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Edit' | r) | xlat}}</small>
+                    <small class="visible-xs">{{('Cancel' | r) | xlat}}</small>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-primary" ng-click="saveChanges()">
+                    <loadingindicator ng-show="displayLoadingIndicator" />
+                    <small class="hidden-xs">{{('Save' | r) + ' ' + ('Order' | r) | xlat}}</small>
+                    <small class="visible-xs">{{('Save' | r) | xlat}}</small>
+                </button>
+            </li>
+        </ul>
+
         <div class="navbar-fixed-bottom">
             <div class="view-response-message alert-success text-center" alert-show="actionMessage">
                 <p>{{actionMessage | r | xlat}}</p>
@@ -55,7 +80,7 @@
                     </li>
                 </ul>
             </div>
-            <orderbuttons view="checkout" continue="true"></orderbuttons>
+            <!--<orderbuttons view="checkout" continue="true"></orderbuttons>-->
         </div>
     </div>
 </section>

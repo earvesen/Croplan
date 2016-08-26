@@ -1,42 +1,17 @@
-<ul>
-    <style ng-if="continue">
-        .navbar-fixed-bottom ul li:nth-of-type(1) {
-            width: 20%;
-        }
-        .navbar-fixed-bottom ul li:nth-of-type(2) {
-            width: 20%;
-        }
-        .navbar-fixed-bottom ul li:nth-of-type(3) {
-            width: 20%;
-        }
-        .navbar-fixed-bottom ul li:last-child {
-            width: 40%;
-        }
-    </style>
-    <li ng-if="continue">
-        <button type="button" class="btn btn-info" redirect="catalog">
-            <small class="hidden-xs">{{'Continue Shopping' | r | xlat}}</small>
-            <small class="visible-xs">{{'Shop' | r | xlat}}</small>
-        </button>
-    </li>
-    <li>
-        <button class="btn btn-danger" ng-click="currentOrder.Status == 'AwaitingApproval' ? cancelEdit() : cancelOrder()">
-            <small ng-show="currentOrder.Status != 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Order' | r) | xlat}}</small>
-            <small ng-show="currentOrder.Status == 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Edit' | r) | xlat}}</small>
-        </button>
-    </li>
-    <li>
-        <button class="btn btn-primary"  ng-click="saveChanges()">
-            <loadingindicator ng-show="displayLoadingIndicator" />
-            {{('Save' | r) + ' ' + ('Order' | r) | xlat}}
-        </button>
-    </li>
-    <li>
-        <button class="btn"
-                ng-class="{'btn-warning': cart_shipping.$invalid || cart_order.$invalid || cart_billing.$invalid || submitClicked, 'btn-success': !cart_shipping.$invalid && !cart_order.$invalid && !cart_billing.$invalid || !submitClicked }"
-                ng-click="submitOrder()" ng-disabled="cart_shipping.$invalid || cart_order.$invalid || cart_billing.$invalid || submitClicked">
-            <i ng-show="cart_shipping.$invalid || cart_order.$invalid || cart_billing.$invalid || submitClicked" class="fa fa-warning"></i>
-            <span>{{('Submit' | r) + ' ' + ('Order' | r) | xlat}}</span>
-        </button>
-    </li>
-</ul>
+<div class="checkout-reminder">
+    <div class="alert alert-success" ng-show="!cart_shipping.$invalid && !cart_order.$invalid && !cart_billing.$invalid">
+    <h3>You're almost there!</h3>
+    To complete your order, click the <strong>SUBMIT ORDER</strong> button below
+    <i class="fa fa-hand-o-down"></i>
+    </div>
+    <ul>
+        <li>
+            <button class="btn"
+                    ng-class="{'btn-warning': cart_shipping.$invalid || cart_order.$invalid || cart_billing.$invalid || submitClicked, 'btn-success': !cart_shipping.$invalid && !cart_order.$invalid && !cart_billing.$invalid || !submitClicked }"
+                    ng-click="submitOrder()" ng-disabled="cart_shipping.$invalid || cart_order.$invalid || cart_billing.$invalid || submitClicked">
+                <i ng-show="cart_shipping.$invalid || cart_order.$invalid || cart_billing.$invalid || submitClicked" class="fa fa-warning"></i>
+                <span>{{('Submit' | r) + ' ' + ('Order' | r) | xlat}}</span>
+            </button>
+        </li>
+    </ul>
+</div>
