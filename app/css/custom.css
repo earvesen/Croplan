@@ -425,6 +425,7 @@ hr.login-header-top {
 
 .order-summary .panel-footer {
     border-top: 1px solid #fff;
+    padding:0;
 }
 
 .order-summary .panel-footer .btn-default {
@@ -441,26 +442,6 @@ hr.login-header-top {
 .order-history-view .nav li {
     padding-left:20px;
 }
-
-/*.order-summary {
-    min-height:360px;
-}
-
-.order-summary.ship-address-selected {
-    min-height:470px;
-}
-
-.order-summary.ship-address-input-open {
-    min-height:930px;
-}
-
-@media (max-width:767px) {
-    .order-summary,
-    .order-summary.ship-address-selected,
-    .order-summary.ship-address-input-open {
-        min-height:100%;
-    }
-}*/
 
 .checkout-buttons {margin: 0 0 30px 15px;}
 .checkout-buttons li { width:33%; float:left; padding-right:10px; }
@@ -533,8 +514,8 @@ hr.login-header-top {
 
 .btn-danger {
     color: #ffffff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
+    background-color: #d02729;
+    border-color: #d02729;
 }
 .btn-danger:hover,
 .btn-danger:focus,
