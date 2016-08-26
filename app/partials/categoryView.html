@@ -9,7 +9,9 @@
                 </nav>
             </div>
         </aside>
-        <div ng-class="{ 'col-md-9': navStatus.visible, 'col-md-12': !navStatus.visible }" >
+        <div ng-class="{ 'col-md-9 store-wrapper': navStatus.visible, 'col-md-12': !navStatus.visible }">
+
+            <homemessage ng-if="isActive('catalog')" />
 
             <categorylistview></categorylistview>
 
