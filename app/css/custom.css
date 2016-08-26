@@ -48,10 +48,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border-color:#cccccc;
 }
 
-/*.nav ul {
-    padding:0 20px 0 25px;
-}*/
-
 .checkout-view .form-control:focus {
     border-color:#497035;
 }
@@ -239,6 +235,13 @@ hr.login-header-top {
     padding:15px 20px 0 0;
 }
 
+@media (max-width:767px) {
+    .navbar .container .navbar-nav.pull-right li,
+    .navbar .container-view .navbar-nav.pull-right li {
+        padding:15px 0 0 0;
+    }
+}
+
 .navbar-default {
     background:rgba(255,255,255,0.8);
     border-color: #FFF;
@@ -291,6 +294,13 @@ hr.login-header-top {
     color: #ffffff;
 }
 
+.badge {
+    background-color:#6f9934;
+    color:#FFF;
+    position: relative;
+    top:-2px;
+}
+
 .panel {
     background-color:transparent;
     border:0;
@@ -309,21 +319,26 @@ hr.login-header-top {
     padding: 15px 0;
 }
 
-.panel-default > .panel-heading, .panel-search > .panel-heading, .panel-category-list ul li a .empty > .panel-heading, .panel-order > .panel-heading {
+.panel-default > .panel-heading,
+.panel-search > .panel-heading,
+.panel-category-list ul li a .empty > .panel-heading,
+.panel-order > .panel-heading {
     background-color: transparent;
-    /*border-color: #dddddd;
-    color: #333333;*/
 }
 
-/*
+/**/
 .panel-body,
 .panel-category-list:not(.no-panels),
 .panel-product-list:not(.no-panels),
 .panel-lineitem, .panel-order-history,
 .panel-order-shipping-multiple {
-    padding: 0 0 0 10px;
+    padding: 15px 20px;
 }
-*/
+
+/*.panel p {
+    margin:0 10px;
+}*/
+/**/
 
 .panel-category-list:not(.no-panels) {
     padding: 0 0 0 10px;
@@ -355,38 +370,18 @@ hr.login-header-top {
     border-bottom: 0;
 }
 
-.app-loading-indicator-cell {
-    background-color: transparent;
+.panel-nav {
+    font-size: 13px;
+    padding: 20px 10px;
+    margin:0 60px 0 5px;
 }
 
-.app-loading-indicator-cell i {
-    color: #6f9934;
-}
-
-.app-loading-indicator-cell p {
-    background-color: transparent;
-    color: #6f9934;
-}
-
-.list-group-item {
-    background-color: transparent;
-    border: 1px solid #fff;
+.panel .panel-heading {
+    border-top: 0 none;
 }
 
 .panel-footer {
     background-color: transparent;
-}
-
-.panel-lineitem .btn-danger {
-    right: 15px;
-}
-
-.copyright-view p {
-   color:#ffffff;
-}
-
-.copyright-view p:nth-child(1) a {
-    color:#ffffff;
 }
 
 .btn-primary {
@@ -415,6 +410,72 @@ hr.login-header-top {
     color: #ffffff;
 }
 
+.btn-danger {
+    color: #ffffff;
+    background-color: #e82c2e;
+    border-color: #e82c2e;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active,
+.open .dropdown-toggle.btn-danger {
+    color: #ffffff;
+    background-color: #d02729;
+    border-color: #d02729;
+}
+
+.btn-danger:active,
+.btn-danger.active,
+.open .dropdown-toggle.btn-danger {
+    background-image: none;
+}
+
+.btn-danger.disabled,
+.btn-danger[disabled],
+fieldset[disabled] .btn-danger,
+.btn-danger.disabled:hover,
+.btn-danger[disabled]:hover,
+fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus,
+.btn-danger[disabled]:focus,
+fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled:active,
+.btn-danger[disabled]:active,
+fieldset[disabled] .btn-danger:active,
+.btn-danger.disabled.active,
+.btn-danger[disabled].active,
+fieldset[disabled] .btn-danger.active {
+    background-color: #e82c2e;
+    border-color: #e82c2e;
+}
+
+.app-loading-indicator-cell {
+    background-color: transparent;
+}
+
+.app-loading-indicator-cell i {
+    color: #6f9934;
+}
+
+.app-loading-indicator-cell p {
+    background-color: transparent;
+    color: #6f9934;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.thumbnail img {
+    max-height: 150px;
+}
+
+.panel-lineitem .btn-danger {
+    right: 15px;
+}
+
 .checkout-view .order-location  {
     margin:15px 0 0 5px;
 }
@@ -432,44 +493,24 @@ hr.login-header-top {
     margin:0 20px;
 }
 
-.badge {
-    background-color:#6f9934;
-    color:#FFF;
-    position: relative;
-    top:-2px;
-}
-
 .order-history-view .nav li {
     padding-left:20px;
 }
 
-.checkout-buttons {margin: 0 0 30px 15px;}
-.checkout-buttons li { width:33%; float:left; padding-right:10px; }
-
-@media (max-width:767px) {
-    .checkout-buttons li {
-        width: 100%;
-        padding: 5px 15px 5px 0;
-    }
-}
-
-.checkout-buttons li .btn-primary {text-transform: none}
-.checkout-buttons li .btn {width:100%;}
-
-
 .checkout-reminder {
     padding:0 5px;
+}
+
+@media (max-width:1200px) {
+    .checkout-reminder {
+        padding:0 5px 20px 0;
+    }
 }
 
 .checkout-reminder .alert-danger {
     background-color:#e82c2e;
     border: 1px solid #e82c2e;
     color:#FFF;
-}
-
-.checkout-reminder .alert  {
-    /*color:#000;
-    font-weight:bold;*/
 }
 
 .checkout-reminder .alert h3 {
@@ -493,59 +534,21 @@ hr.login-header-top {
     margin-left:0;
 }
 
-.thumbnail img {
-    max-height: 150px;
+.checkout-buttons {margin: 0 0 30px 15px;}
+.checkout-buttons li { width:33%; float:left; padding-right:10px; }
+
+@media (max-width:767px) {
+    .checkout-buttons li {
+        width: 100%;
+        padding: 5px 15px 5px 0;
+    }
 }
 
-.panel-nav {
-    font-size: 13px;
-    padding: 20px 10px;
-    margin:0 60px 0 5px;
-}
+.checkout-buttons li .btn-primary {text-transform: none}
+.checkout-buttons li .btn {width:100%;}
 
-.panel .panel-heading {
-    border-top: 0 none;
-}
 
-/*
-.panel p {
-    margin:0 10px;
-}*/
-
-.btn-danger {
-    color: #ffffff;
-    background-color: #d02729;
-    border-color: #d02729;
-}
-.btn-danger:hover,
-.btn-danger:focus,
-.btn-danger:active,
-.btn-danger.active,
-.open .dropdown-toggle.btn-danger {
-    color: #ffffff;
-    background-color: #e82c2e;
-    border-color: #e82c2e;
-}
-.btn-danger:active,
-.btn-danger.active,
-.open .dropdown-toggle.btn-danger {
-    background-image: none;
-}
-.btn-danger.disabled,
-.btn-danger[disabled],
-fieldset[disabled] .btn-danger,
-.btn-danger.disabled:hover,
-.btn-danger[disabled]:hover,
-fieldset[disabled] .btn-danger:hover,
-.btn-danger.disabled:focus,
-.btn-danger[disabled]:focus,
-fieldset[disabled] .btn-danger:focus,
-.btn-danger.disabled:active,
-.btn-danger[disabled]:active,
-fieldset[disabled] .btn-danger:active,
-.btn-danger.disabled.active,
-.btn-danger[disabled].active,
-fieldset[disabled] .btn-danger.active {
-    background-color: #e82c2e;
-    border-color: #e82c2e;
+cartmessage {
+    position: relative;
+    top: 15px;
 }
