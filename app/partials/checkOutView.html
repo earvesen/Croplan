@@ -2,6 +2,7 @@
     <!--<loadingindicator ng-show="displayLoadingIndicator" title="{{'Please wait while we update your order' | r | xlat}}" />-->
     <div class="col-md-4 col-md-offset-1 col-md-push-7 col-collapse">
         <ordersummary />
+        <orderbuttons class="hidden-xs" view="checkout" continue="true"></orderbuttons>
     </div>
 
     <div class="col-md-7 col-md-pull-5 col-collapse" ng-show="currentOrder && currentOrder.isEditable" ng-click="showSuccessAlert = false">
@@ -32,6 +33,8 @@
                 </button>
             </li>
         </ul>
+
+        <orderbuttons class="visible-xs" view="checkout" continue="true"></orderbuttons>
 
         <div class="navbar-fixed-bottom">
             <div class="view-response-message alert-success text-center" alert-show="actionMessage">
