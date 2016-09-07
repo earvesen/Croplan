@@ -564,3 +564,7 @@ cartmessage {
     margin-top: 10px;
     text-align: left;
 }
+
+.specform-default .panel-footer .btn.btn-default {
+    display:none;
+}
