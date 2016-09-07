@@ -90,9 +90,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .login-wrapper {
-    background: url('images/custom/CPLN_Winfield_IN_00090_1000x646.jpg') top center #ffffff;
-    width:1000px;
-    height:646px;
+    background: url('images/custom/CPLN_Winfield_IN_00090_1200x775.jpg') top center #ffffff;
+    width:1200px;
+    height:775px;
 }
 
 @media (max-width: 768px) {
@@ -551,4 +551,16 @@ fieldset[disabled] .btn-danger.active {
 cartmessage {
     position: relative;
     top: 15px;
+}
+
+/*SPEC FORM*/
+
+.view-form-icon label {
+    font-size: 15px;
+}
+
+.specform-default .panel-body p {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: left;
 }
