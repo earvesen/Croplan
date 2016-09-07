@@ -6,7 +6,6 @@ Template: Howdy
 
 
 Colors -
-
 Red #e82c2e 232,44,46 / #d02729 208,39,41
 Lt Green #6f9934 111,153,52
 Dk Green #497035 73,112,53
@@ -319,6 +318,10 @@ hr.login-header-top {
     padding: 15px 0;
 }
 
+.order-search-view .panel.no-results .panel-heading .panel-title {
+    padding: 0 0 25px;
+}
+
 .panel-default > .panel-heading,
 .panel-search > .panel-heading,
 .panel-category-list ul li a .empty > .panel-heading,
@@ -567,4 +570,8 @@ cartmessage {
 
 .specform-default .panel-footer .btn.btn-default {
     display:none;
+}
+
+.navbar-fixed-bottom p {
+    margin:0;
 }
