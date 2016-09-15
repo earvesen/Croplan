@@ -59,6 +59,11 @@
                                     {{'Addresses' | r | xlat}}
                                 </a>
                             </li>
+                            <li class="order" ng-if="user.Type == 'Customer'" ng-class="{'active': isActive('favoriteorders')}">
+                                <a href="favoriteorders">
+                                    {{'Favorites' | r | xlat}}
+                                </a>
+                            </li>
                             <li ng-show="user.Type == 'Customer' && user.Permissions.contains('ViewMessaging')" ng-class="{'active': isActive(['messages', 'message'])}">
                                 <a href="message">
                                     {{'Messages' | r | xlat}}
